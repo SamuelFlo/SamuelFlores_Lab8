@@ -47,6 +47,7 @@ public class Main extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jd_agregarproductos = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
@@ -70,9 +71,14 @@ public class Main extends javax.swing.JFrame {
         tf_identidad = new javax.swing.JTextField();
         tf_saldo = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        tf_contra = new javax.swing.JTextField();
         jd_tabla = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
+        jd_tabla1 = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabla1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         tf_cuenta = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -129,10 +135,28 @@ public class Main extends javax.swing.JFrame {
         jMenu4.add(jMenuItem4);
 
         jMenuItem5.setText("Modificar Clientes");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem5);
 
         jMenuItem6.setText("Eliminar Clientes");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem6);
+
+        jMenuItem8.setText("Listar Clientes");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem8);
 
         jMenu1.add(jMenu4);
 
@@ -243,29 +267,33 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setText("Contrasena");
+
         javax.swing.GroupLayout jd_agregarclientesLayout = new javax.swing.GroupLayout(jd_agregarclientes.getContentPane());
         jd_agregarclientes.getContentPane().setLayout(jd_agregarclientesLayout);
         jd_agregarclientesLayout.setHorizontalGroup(
             jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_agregarclientesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addContainerGap())
             .addGroup(jd_agregarclientesLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(jLabel10)
                     .addComponent(jLabel12)
-                    .addComponent(jLabel13))
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
                 .addGap(34, 34, 34)
                 .addGroup(jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9)
-                    .addComponent(tf_saldo, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(tf_saldo)
                     .addComponent(tf_identidad)
                     .addComponent(tf_cuentaa)
-                    .addComponent(tf_nombree))
+                    .addComponent(tf_nombree)
+                    .addComponent(tf_contra, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
                 .addContainerGap(111, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_agregarclientesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addContainerGap())
         );
         jd_agregarclientesLayout.setVerticalGroup(
             jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,15 +304,19 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(tf_nombree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
+                .addGap(25, 25, 25)
                 .addGroup(jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(tf_cuentaa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(19, 19, 19)
                 .addGroup(jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(tf_identidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                    .addComponent(jLabel14)
+                    .addComponent(tf_contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_identidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(34, 34, 34)
                 .addGroup(jd_agregarclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(tf_saldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -318,6 +350,33 @@ public class Main extends javax.swing.JFrame {
                 .addGap(80, 80, 80)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(95, Short.MAX_VALUE))
+        );
+
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Cuenta", "Contrasena", "Identidad", "Saldo", "Productos"
+            }
+        ));
+        jScrollPane2.setViewportView(tabla1);
+
+        javax.swing.GroupLayout jd_tabla1Layout = new javax.swing.GroupLayout(jd_tabla1.getContentPane());
+        jd_tabla1.getContentPane().setLayout(jd_tabla1Layout);
+        jd_tabla1Layout.setHorizontalGroup(
+            jd_tabla1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_tabla1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jd_tabla1Layout.setVerticalGroup(
+            jd_tabla1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_tabla1Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -559,10 +618,11 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Dba db = new Dba("./basedatos.mdb");
          db.conectar();
+         String pro = "";
          try {
-             db.query.execute("INSERT INTO Clientes (Nombre,Cuenta,Identidad,Saldo)"
-                    + " VALUES('"+tf_nombree.getText()+"', "+Integer.parseInt(tf_cuentaa.getText())+
-                     ", "+Integer.parseInt(tf_identidad.getText())+", '"+Double.parseDouble(tf_saldo.getText())+"')");
+             db.query.execute("INSERT INTO Clientes (Nombre,Cuenta,Contrasena,Identidad,Saldo,Productos)"
+                    + " VALUES('"+tf_nombree.getText()+"', '"+tf_cuentaa.getText() + "', '" +tf_contra.getText()+
+                     "', "+Integer.parseInt(tf_identidad.getText())+", "+Double.parseDouble(tf_saldo.getText())+ ", '" + pro +"')");
             db.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -570,6 +630,154 @@ public class Main extends javax.swing.JFrame {
          db.desconectar();
        JOptionPane.showMessageDialog(jd_agregarproductos,"AGREGADO EXITOSO");
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+          Dba db = new Dba("./basedatos.mdb");
+        db.conectar();
+        try {
+            db.query.execute("select Nombre, Cuenta, Contrasena, Identidad, Saldo, Productos from Clientes");
+            ResultSet rs = db.query.getResultSet();
+            while(rs.next()){
+                System.out.println(rs.getString(1)+"----->"+rs.getString(2)+"----->"+rs.getString(3)+"---->"
+                        +rs.getInt(4)+"---->"+rs.getDouble(5)+"---->"+rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+        db.desconectar();
+        String mod = JOptionPane.showInputDialog("a)Nombre\n"
+                + "b)Cuenta\n"
+                + "c)Contrasena\n"
+                + "d)Identidad\n"
+                + "e)Saldo");
+        switch(mod){
+            case "a":
+                String nombre = JOptionPane.showInputDialog("Ingrese el nombre: ");
+                String nombren = JOptionPane.showInputDialog("Ingrese el nombre que desea modificar: ");
+                db.conectar();
+                try {
+                    db.query.execute("update Clientes set nombre = '" + nombre + "'  where nombre = '" + nombren + "'");
+                    db.commit();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                db.desconectar();
+                break;
+            case "b":
+                String cuenta = JOptionPane.showInputDialog("Ingrese la cuenta : ");
+                String cuentan = JOptionPane.showInputDialog("Ingrese la cuenta que desea modificar: ");
+                db.conectar();
+                try {
+                    db.query.execute("update Clientes set cuenta = '" + cuenta + "'  where cuenta = '"+cuentan+"'");
+                    db.commit();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                db.desconectar();
+                break;
+            case "c":
+                String contra = JOptionPane.showInputDialog("Ingrese la contrasena: ");
+                String contran = JOptionPane.showInputDialog("Ingrese la contrasena que desea modificar: ");
+                db.conectar();
+                try {
+                    db.query.execute("update Clientes set contrasena = '" + contra + "'  where contrasena = '"+contran+"'");
+                    db.commit();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                db.desconectar();
+                break;
+            case "d":
+                String iden = JOptionPane.showInputDialog("Ingrese la identidad: ");
+                String idenn = JOptionPane.showInputDialog("Ingrese la identidad que desea modificar: ");
+                int identidad = Integer.parseInt(iden);
+                int identidadn = Integer.parseInt(idenn);
+                 db.conectar();
+                try {
+                    db.query.execute("update Clientes set identidad = '" + identidad + "'  where identidad = '"+identidadn+"'");
+                    db.commit();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                db.desconectar();
+                break;
+            case "e":
+                String sal  = JOptionPane.showInputDialog("Ingrese el saldo: ");
+                String saln = JOptionPane.showInputDialog("Ingrese el saldo que desea modificar: ");
+                double saldo = Double.parseDouble(sal);
+                double saldon = Double.parseDouble(saln);
+                  db.conectar();
+                try {
+                    db.query.execute("update Clientes set saldo = '" + saldo + "'  where saldo = '"+saldon+"'");
+                    db.commit();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                db.desconectar();
+                break;
+        }
+        
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        Dba db = new Dba("./basedatos.mdb");
+        db.conectar();
+        try {
+            db.query.execute("select Nombre, Cuenta, Contrasena, Identidad, Saldo, Productos from Clientes");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                System.out.println(rs.getString(1) + "----->" + rs.getString(2) + "----->" + rs.getString(3) + "---->"
+                        + rs.getInt(4) + "---->" + rs.getDouble(5) + "---->" + rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+        db.desconectar();
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre: ");
+        db.conectar();
+        try {
+            db.query.execute("delete from Clientes where nombre = '" + nombre + "'");
+            db.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        db.desconectar();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        String cuenta;
+        String contrasena;
+        int identidad;
+        double saldo;
+        String productos;
+        jd_tabla1.pack();
+        jd_tabla1.setLocationRelativeTo(jd_administrador);
+        jd_tabla1.setVisible(true);
+        Dba db = new Dba("./basedatos.mdb");
+        db.conectar();
+        try {
+            db.query.execute("select Nombre, Cuenta, Contrasena, Identidad, Saldo, Productos from Clientes");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                nombre = rs.getString(1);
+                cuenta = rs.getString(2);
+                contrasena = rs.getString(3);
+                identidad = rs.getInt(4);
+                saldo = rs.getDouble(5);
+                productos = rs.getString(6);
+                DefaultTableModel tab = (DefaultTableModel) tabla1.getModel();
+                tab.addRow(new Object[]{
+                    nombre, cuenta, contrasena, identidad, saldo,productos
+                });
+                
+            }
+
+        } catch (Exception e) {
+        }
+        db.desconectar();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -616,6 +824,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -636,13 +845,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JDialog jd_administrador;
     private javax.swing.JDialog jd_agregarclientes;
     private javax.swing.JDialog jd_agregarproductos;
     private javax.swing.JDialog jd_tabla;
+    private javax.swing.JDialog jd_tabla1;
     private javax.swing.JTable tabla;
+    private javax.swing.JTable tabla1;
     private javax.swing.JTextField tf_cantidad;
+    private javax.swing.JTextField tf_contra;
     private javax.swing.JTextField tf_contrasena;
     private javax.swing.JTextField tf_cuenta;
     private javax.swing.JTextField tf_cuentaa;
