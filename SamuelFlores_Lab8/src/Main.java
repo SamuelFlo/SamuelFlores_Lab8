@@ -79,12 +79,18 @@ public class Main extends javax.swing.JFrame {
         jd_tabla1 = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla1 = new javax.swing.JTable();
+        jd_clientes = new javax.swing.JDialog();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         tf_cuenta = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         tf_contrasena = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         jMenu1.setText("Administrador");
 
@@ -379,6 +385,34 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(140, Short.MAX_VALUE))
         );
 
+        jMenu5.setText("Clientes");
+
+        jMenuItem9.setText("Comprar");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem9);
+
+        jMenuItem10.setText("Factura");
+        jMenu5.add(jMenuItem10);
+
+        jMenuBar2.add(jMenu5);
+
+        jd_clientes.setJMenuBar(jMenuBar2);
+
+        javax.swing.GroupLayout jd_clientesLayout = new javax.swing.GroupLayout(jd_clientes.getContentPane());
+        jd_clientes.getContentPane().setLayout(jd_clientesLayout);
+        jd_clientesLayout.setHorizontalGroup(
+            jd_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_clientesLayout.setVerticalGroup(
+            jd_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Cuenta");
@@ -401,46 +435,55 @@ public class Main extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setText("LogIn");
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/donde-viven-los-gatos.jpg"))); // NOI18N
+        jLabel15.setText("jLabel15");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tf_cuenta)
-                    .addComponent(tf_contrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(167, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(34, 34, 34))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_cuenta)
+                            .addComponent(tf_contrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jButton1)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_cuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tf_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(25, 25, 25))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_cuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(tf_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(119, 119, 119)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel15)))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -456,8 +499,30 @@ public class Main extends javax.swing.JFrame {
             jd_administrador.pack();
             jd_administrador.setLocationRelativeTo(this);
             jd_administrador.setVisible(true);
-            
+
         }
+        String cuenta;
+        String contrasena;
+        Dba db = new Dba("./basedatos.mdb");
+        db.conectar();
+        try {
+            db.query.execute("select Nombre, Cuenta, Contrasena, Identidad, Saldo, Productos from Clientes");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                cuenta = rs.getString(2);
+                contrasena = rs.getString(3);
+                if ((tf_cuenta.getText().equals(cuenta)) && (tf_contrasena.getText().equals(contrasena))) {
+                    jd_clientes.pack();
+                    jd_clientes.setLocationRelativeTo(this);
+                    jd_clientes.setVisible(true);
+
+                }
+            }
+
+        } catch (Exception e) {
+        }
+
+        db.desconectar();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -779,6 +844,47 @@ public class Main extends javax.swing.JFrame {
         db.desconectar();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        int cantidad;
+        double precio;
+        String fecha;
+        System.out.println("PRODUCTOS");
+        Dba db = new Dba("./basedatos.mdb");
+        db.conectar();
+        try {
+            db.query.execute("select Nombre, Cantidad, Precio, Fecha from Productos");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                System.out.println(rs.getString(1) + "----->" + rs.getInt(2) + "----->" + rs.getDouble(3) + "---->" + rs.getString(4));
+                nombre = rs.getString(1);
+                cantidad = rs.getInt(2);
+                precio = rs.getDouble(3);
+                fecha = rs.getString(4);
+                cli.getProduc().add(new Productos(nombre, cantidad, precio, null));
+                db.query.execute("INSERT INTO Clientes (Nombre,Cuenta,Contrasena,Identidad,Saldo,Productos)"
+                        + " VALUES('" + tf_nombree.getText() + "', '" + tf_cuentaa.getText() + "', '" + tf_contra.getText()
+                        + "', " + Integer.parseInt(tf_identidad.getText()) + ", " + Double.parseDouble(tf_saldo.getText()) + ", '" + cli.getProduc().toString() + "')");
+                db.commit();
+            }
+        } catch (Exception e) {
+        }
+        db.desconectar();
+        System.out.println("CLIENTES");
+        db.conectar();
+        try {
+            db.query.execute("select Nombre, Cuenta, Contrasena, Identidad, Saldo, Productos from Clientes");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                System.out.println(rs.getString(1) + "----->" + rs.getString(2) + "----->" + rs.getString(3) + "---->"
+                        + rs.getInt(4) + "---->" + rs.getDouble(5) + "---->" + rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+        db.desconectar();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -825,6 +931,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -837,8 +944,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -846,11 +956,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JDialog jd_administrador;
     private javax.swing.JDialog jd_agregarclientes;
     private javax.swing.JDialog jd_agregarproductos;
+    private javax.swing.JDialog jd_clientes;
     private javax.swing.JDialog jd_tabla;
     private javax.swing.JDialog jd_tabla1;
     private javax.swing.JTable tabla;
@@ -866,6 +978,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_precio;
     private javax.swing.JTextField tf_saldo;
     // End of variables declaration//GEN-END:variables
-
+Clientes cli = new Clientes();
 
 }
